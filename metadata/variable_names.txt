@@ -1,0 +1,53 @@
+# https://confluence.ecmwf.int/display/CKB/CAMS%3A+Reanalysis+data+documentation#CAMS:Reanalysisdatadocumentation-Parameterlistings
+
+# general variables
+station		Station name abbreviation (3 letters)
+date		Date of the measurement (dd-mm-yyy)
+latitude	Latitude (originally in degrees; positive N, negative S, scaled to range [-1, 1])
+longitude	Longitude (originally in degrees; positive E, negative W, scaled to range [-1, 1])
+
+
+# aerosols_data
+aermr01		Sea salt aerosol (0.03 - 0.5 µm) mixing ratio* (in kg kg_air-1)
+aermr02		Sea salt aerosol (0.5 - 5 µm) mixing ratio* (in kg kg_air-1)
+aermr03		Sea salt aerosol (5 - 20 µm) mixing ratio* (in kg kg_air-1)
+aermr04		Dust aerosol (0.03 - 0.55 µm) mixing ratio* (in kg kg_air-1)
+aermr05		Dust aerosol (0.55 - 0.9 µm) mixing ratio* (in kg kg_air-1)
+aermr06		Dust aerosol (0.9 - 20 µm) mixing ratio* (in kg kg_air-1)
+aermr07		Hydrophilic organic matter aerosol mixing ratio* (in kg kg_air-1)
+aermr08		Hydrophobic organic matter aerosol mixing ratio* (in kg kg_air-1)
+aermr09		Hydrophilic black carbon aerosol mixing ratio* (in kg kg_air-1)
+aermr10		Hydrophobic black carbon aerosol mixing ratio* (in kg kg_air-1)
+aermr11		Sulphate aerosol mixing ratio* (in kg kg_air-1)
+
+# atmospheric_data
+d2m		dew point temperature at 2m height (in K)
+t2m		air temperature at 2m height (in K)
+
+# boundary_layer_height_data
+blh		Boundary layer height (in )
+
+# gases_data
+co		Carbon monoxide* (in kg kg_air-1)
+c5h8		Isoprene* (in kg kg_air-1)
+no2		Nitrogen dioxide* (in kg kg_air-1)
+no		Nitrogen monoxide* (in kg kg_air-1)
+so2		Sulphur dioxide* (in kg kg_air-1)
+
+# slow_access_data
+nh3		Ammonia* (in kg kg_air-1)
+crwc		Specific rain water content (in kg kg_air-1)
+c10h16		Terpenes* (in kg kg_air-1)
+
+# n100_data
+n100		N100 concentration (in )
+
+# calculated variables
+rh		Relative humidity (in %)
+wind_speed	Wind speed (in )
+doy_sin		Day of the year (doy): sin((2*pi*doy)/366) (in range [-1, 1])
+doy_cos		Day of the year (doy): cos((2*pi*doy)/366) (in range [-1, 1])
+longitude_sin	Longitude: sin((2*pi*longitude)/180) (in range [-1, 1])
+longitude_cos	Longitude: cos((2*pi*longitude)/180) (in range [-1, 1])
+
+*In the CAMS Global Reanalysis, this variable is the mass mixing ratio at different pressure or model levels in kg kg-1
