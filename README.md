@@ -1,8 +1,6 @@
 
 # ccn-globally
 
-Model cloud condensation nuclei globally
-
 ![](figures/global_ccn.gif)
 
 ## Environment
