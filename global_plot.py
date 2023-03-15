@@ -22,7 +22,7 @@ def plot_frame(ds, date, time):
     # Load ML model
     params = {'n_estimators': 100, 'reg_lambda': 2, 'learning_rate': 0.3, 'max_depth': 7}
     model = xgb.XGBRegressor(**params)
-    model.load_model('models/gases.model')
+    model.load_model('models/fast_access_met_gases.model')
 
     # Predict n100 concentration
     df['n100'] = np.exp(model.predict(df[features]))
@@ -31,7 +31,7 @@ def plot_frame(ds, date, time):
     result['n100'] = result.n100.assign_attrs(long_name='Conc.')
 
     # Plot result
-    vmin, vmax = 5.6, 6760
+    vmin, vmax = 8, 8000
     major_ticks = [10, 100, 1000, 10000]
     fig, ax = plt.subplots(nrows=1, subplot_kw={'projection': ccrs.Robinson()})
     earth = result.n100.plot.contourf(
@@ -52,7 +52,7 @@ frames = []
 times = ['00:00', '03:00', '06:00', '09:00', '12:00', '15:00', '18:00', '21:00']
 
 start_date = datetime(2022, 5, 1)
-end_date = datetime(2022, 5, 31)
+end_date = datetime(2022, 5, 5)
 delta = timedelta(days=1)
 
 while start_date <= end_date:
@@ -65,4 +65,4 @@ while start_date <= end_date:
         
     start_date += delta
 
-gif.save(frames, 'figures/global_ccn.gif', duration=150)
+gif.save(frames, 'figures/global_ccn.gif', duration=120)
